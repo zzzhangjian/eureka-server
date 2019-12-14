@@ -1,0 +1,22 @@
+#集群配置
+server:
+  port: 7900
+
+spring:
+  application:
+    name: eureka-7900
+  security:
+    user:
+      name: root
+      password: root
+  profiles:
+    active: 7900
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://root:root@eureka-7901:7901/eureka/,http://root:root@eureka-7902:7902/eureka/
